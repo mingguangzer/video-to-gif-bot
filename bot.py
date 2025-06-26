@@ -68,7 +68,7 @@ async def handle_size_selection(update: Update, context: ContextTypes.DEFAULT_TY
     video_path = settings['video_path']
     text = settings['text']
     gif_path = f"gif_{user_id}.gif"
-    font_path = "KhmerOSNew-Bold.ttf"  # Ensure this file exists in your project folder
+    font_path = "KhmerOSNew-Bold"  # Ensure this file exists in your project folder
 
     await query.edit_message_text("⏳ Creating your GIF... Please wait...")
 
