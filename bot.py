@@ -16,14 +16,14 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[InlineKeyboardButton("About Me 👤", url="https://t.me/ZH14UI")]]
     await update.message.reply_text(
-        "🎬 Send me a video and I will convert it to a GIF for you — automatically!",
+        "🎬 Send me a video and I’ll convert it to a GIF for you!",
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
 async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
     video = update.message.video or update.message.document
     if not video:
-        await update.message.reply_text("⚠️ Please send a valid video.")
+        await update.message.reply_text("⚠️ Please send a valid video file.")
         return
 
     user_id = update.effective_user.id
@@ -51,7 +51,7 @@ def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.VIDEO | filters.Document.VIDEO, handle_video))
-    print("🤖 Bot is running (no text overlay)...")
+    print("🤖 Bot is running...")
     app.run_polling()
 
 if __name__ == "__main__":
