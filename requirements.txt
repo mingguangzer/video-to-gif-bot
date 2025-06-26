@@ -1,4 +1,4 @@
-python-telegram-bot==20.3
+numpy==1.23.5
 moviepy==1.0.3
-python-dotenv
-numpy==1.23.5   # ✅ Compatible version
+python-telegram-bot==20.3
+python-dotenv==1.0.1
